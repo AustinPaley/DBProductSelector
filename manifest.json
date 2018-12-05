@@ -1,0 +1,23 @@
+{
+  "name" : "DB Product Selector",
+  "description" : "Extension to easily turn on and off DB products.",
+  "version" : "0.1",
+  "options_page": "options.html",
+  "manifest_version" : 2,
+  "permissions" : ["activeTab", "declarativeContent", "storage"],
+  "background" : {
+    "scripts" : ["background.js"],
+    "persistent" : false
+  },
+  "page_action" : {
+    "default_popup" : "popup.html",
+    "default_icon" : {
+      "16" : "calculator-16.png",
+      "128" : "calculator-128.png"
+    }
+  },
+  "icons" : {
+    "16" : "calculator-16.png",
+    "128" : "calculator-128.png"
+  }
+}
