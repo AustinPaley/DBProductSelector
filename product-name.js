@@ -21,23 +21,28 @@ window.addEventListener('load', () => {
     }
 
     function getABMData(){
-      return document.body.querySelector('.table-striped > tbody > tr:nth-child(1)').innerHTML;
+      var formattedLink = "<a id='abmLink'" + document.body.querySelector('.table-striped > tbody > tr:nth-child(1)').innerHTML.split("<a")[1]
+      return document.body.querySelector('.table-striped > tbody > tr:nth-child(1)').innerHTML.split("<a")[0] + formattedLink;
     }
 
     function getTargetingData(){
-      return document.body.querySelector('.table-striped > tbody > tr:nth-child(2)').innerHTML;
+      var formattedLink = "<a id='targetingLink'" + document.body.querySelector('.table-striped > tbody > tr:nth-child(2)').innerHTML.split("<a")[1]
+      return document.body.querySelector('.table-striped > tbody > tr:nth-child(2)').innerHTML.split("<a")[0] + formattedLink;
     }
 
     function getEngagementData(){
-      return document.body.querySelector('.table-striped > tbody > tr:nth-child(3)').innerHTML;
+      var formattedLink = "<a id='engagementLink'" + document.body.querySelector('.table-striped > tbody > tr:nth-child(3)').innerHTML.split("<a")[1]
+      return document.body.querySelector('.table-striped > tbody > tr:nth-child(3)').innerHTML.split("<a")[0] + formattedLink;
     }
 
     function getConversionData(){
-      return document.body.querySelector('.table-striped > tbody > tr:nth-child(4)').innerHTML;
+      var formattedLink = "<a id='conversionLink'" + document.body.querySelector('.table-striped > tbody > tr:nth-child(4)').innerHTML.split("<a")[1]
+      return document.body.querySelector('.table-striped > tbody > tr:nth-child(4)').innerHTML.split("<a")[0] + formattedLink;
     }
 
     function getProData(){
-      return document.body.querySelector('.table-striped > tbody > tr:nth-child(5)').innerHTML;
+      var formattedLink = "<a id='proLink'" + document.body.querySelector('.table-striped > tbody > tr:nth-child(5)').innerHTML.split("<a")[1]
+      return document.body.querySelector('.table-striped > tbody > tr:nth-child(5)').innerHTML.split("<a")[0] + formattedLink;
     }
 
     //We have permission to access the activeTab, so we can call chrome.tabs.executeScript:
@@ -51,6 +56,7 @@ window.addEventListener('load', () => {
     chrome.tabs.executeScript({
       code: '(' + getABMData + ')();'
     }, (results) => {
+      console.log(results)
       abmInfo.innerHTML = results[0]
     })
 
