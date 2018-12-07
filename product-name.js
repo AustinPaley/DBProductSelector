@@ -5,7 +5,14 @@ let engagementInfo = document.querySelector('#engagement-info')
 let conversionInfo = document.querySelector('#conversion-info')
 let proInfo = document.querySelector('#pro-info')
 
-document.getElementById("test").addEventListener('click', () => {
+// LOGIC TO HAVE LOADING WHEEL SHOW UP WHILE STUFF IN THE BACKGROUND WORKS
+// document.querySelector('#Submit').addEventListener('click', () => {
+//   chrome.tabs.executeScript({
+//     code: `document.body.querySelector('#root > div > div > div > div:nth-child(2) > div > div > table').innerHTML = "<img src='https://media.giphy.com/media/l4FGv5Ci0WIp8kYhO/source.gif' />";`
+//   })
+// })
+
+window.addEventListener('load', () => {
     console.log("Popup DOM fully loaded and parsed");
 
     function getClientName() {
